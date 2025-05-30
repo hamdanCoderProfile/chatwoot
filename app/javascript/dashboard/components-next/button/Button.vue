@@ -70,12 +70,11 @@ const computedVariant = computed(() => {
 
 const computedColor = computed(() => {
   if (props.color) return props.color;
-  if (attrs.blue || attrs.blue === '') return 'blue';
   if (attrs.ruby || attrs.ruby === '') return 'ruby';
   if (attrs.amber || attrs.amber === '') return 'amber';
   if (attrs.slate || attrs.slate === '') return 'slate';
   if (attrs.teal || attrs.teal === '') return 'teal';
-  return 'blue'; // Default color
+  return 'purple'; // Default color
 });
 
 const computedSize = computed(() => {
@@ -98,15 +97,16 @@ const computedJustify = computed(() => {
 
 const STYLE_CONFIG = {
   colors: {
-    blue: {
+    purple: {
       solid:
-        'bg-n-brand text-white hover:enabled:brightness-110 focus-visible:brightness-110 outline-transparent',
+        'bg-[#6A0DAD] text-white hover:enabled:bg-[#5c0ca3] focus-visible:bg-[#5c0ca3] outline-transparent',
       faded:
-        'bg-n-brand/10 text-n-blue-text hover:enabled:bg-n-brand/20 focus-visible:bg-n-brand/20 outline-transparent',
-      outline: 'text-n-blue-text outline-n-brand',
+        'bg-[#6A0DAD]/10 text-[#6A0DAD] hover:enabled:bg-[#6A0DAD]/20 focus-visible:bg-[#6A0DAD]/20 outline-transparent',
+      outline:
+        'text-[#6A0DAD] hover:enabled:bg-[#6A0DAD]/10 focus-visible:bg-[#6A0DAD]/10 outline-[#6A0DAD]',
       ghost:
-        'text-n-blue-text hover:enabled:bg-n-alpha-2 focus-visible:bg-n-alpha-2 outline-transparent',
-      link: 'text-n-blue-text hover:enabled:underline focus-visible:underline outline-transparent',
+        'text-[#6A0DAD] hover:enabled:bg-n-alpha-2 focus-visible:bg-n-alpha-2 outline-transparent',
+      link: 'text-[#6A0DAD] hover:enabled:underline focus-visible:underline outline-transparent',
     },
     ruby: {
       solid:
@@ -188,13 +188,21 @@ const STYLE_CONFIG = {
 };
 
 const variantClasses = computed(() => {
+
+  const color = computedColor.value;
+  const variant = computedVariant.value;
+
+  // fallback to 'purple' if color not found
+  const safeColor = STYLE_CONFIG.colors[color] ? color : 'purple';
   const variantMap = {
-    ghost: `${STYLE_CONFIG.colors[computedColor.value].ghost}`,
-    link: `${STYLE_CONFIG.colors[computedColor.value].link} p-0 font-medium underline-offset-2`,
-    outline: STYLE_CONFIG.colors[computedColor.value].outline,
-    faded: STYLE_CONFIG.colors[computedColor.value].faded,
-    solid: STYLE_CONFIG.colors[computedColor.value].solid,
+    ghost: `${STYLE_CONFIG.colors[safeColor].ghost}`,
+    link: `${STYLE_CONFIG.colors[safeColor].link} p-0 font-medium underline-offset-2`,
+    outline: STYLE_CONFIG.colors[safeColor].outline,
+    faded: STYLE_CONFIG.colors[safeColor].faded,
+    solid: STYLE_CONFIG.colors[safeColor].solid,
   };
+
+  console.log('computedVariant.value', computedVariant.value);
 
   return variantMap[computedVariant.value];
 });

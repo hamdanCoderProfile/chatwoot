@@ -23,8 +23,8 @@ const show = defineModel('show', { type: Boolean, default: false });
       :header-content-value="messageValue"
     />
     <div class="flex items-center justify-end gap-2 p-8">
-      <Button faded slate type="reset" :label="rejectText" @click="onClose" />
-      <Button ruby type="submit" :label="confirmText" @click="onConfirm" />
+      <Button faded purple type="reset" :label="rejectText" @click="onClose" />
+      <Button purple type="submit" :label="confirmText" @click="onConfirm" />
     </div>
   </Modal>
 </template>

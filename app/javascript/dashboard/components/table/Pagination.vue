@@ -124,7 +124,7 @@ onMounted(() => {
           <Button
             icon="i-lucide-chevrons-left"
             ghost
-            slate
+            purple
             sm
             class="!size-6"
             :disabled="!table.getCanPreviousPage()"
@@ -133,7 +133,7 @@ onMounted(() => {
           <Button
             icon="i-lucide-chevron-left"
             ghost
-            slate
+            purple
             sm
             class="!size-6"
             :disabled="!table.getCanPreviousPage()"
@@ -144,7 +144,7 @@ onMounted(() => {
             :key="page"
             xs
             outline
-            :color="page == currentPage ? 'blue' : 'slate'"
+            :color="purple"
             class="!h-6 min-w-6"
             @click="table.setPageIndex(page - 1)"
           >
@@ -158,7 +158,7 @@ onMounted(() => {
           <Button
             icon="i-lucide-chevron-right"
             ghost
-            slate
+            purple
             sm
             class="!size-6"
             :disabled="!table.getCanNextPage()"
@@ -167,7 +167,7 @@ onMounted(() => {
           <Button
             icon="i-lucide-chevrons-right"
             ghost
-            slate
+            purple
             sm
             class="!size-6"
             :disabled="!table.getCanNextPage()"

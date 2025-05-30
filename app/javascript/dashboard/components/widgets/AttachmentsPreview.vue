@@ -77,7 +77,7 @@ const fileName = file => {
       <div class="flex items-center justify-center">
         <Button
           ghost
-          slate
+          purple
           xs
           icon="i-lucide-x"
           @click="onRemoveAttachment(index)"

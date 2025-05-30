@@ -118,7 +118,7 @@ const confirmPlaceHolderText = computed(() =>
                   v-if="isAdmin"
                   v-tooltip.top="$t('TEAMS_SETTINGS.LIST.EDIT_TEAM')"
                   icon="i-lucide-settings"
-                  slate
+                  purple
                   xs
                   faded
                 />
@@ -129,7 +129,7 @@ const confirmPlaceHolderText = computed(() =>
                 v-tooltip.top="$t('TEAMS_SETTINGS.DELETE.BUTTON_TEXT')"
                 icon="i-lucide-trash-2"
                 xs
-                ruby
+                purple
                 faded
                 :is-loading="loading[team.id]"
                 @click="openDelete(team)"

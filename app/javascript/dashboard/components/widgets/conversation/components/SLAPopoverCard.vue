@@ -64,7 +64,7 @@ const toggleShowAllNRT = () => {
           <Button
             link
             xs
-            slate
+            purple
             class="hover:!no-underline"
             :icon="!shouldShowAllNrts ? 'i-lucide-plus' : ''"
             :label="

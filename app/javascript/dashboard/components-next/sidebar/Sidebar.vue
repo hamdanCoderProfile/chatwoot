@@ -199,24 +199,24 @@ const menuItems = computed(() => {
       ],
     },
     {
-      name: 'Captain',
-      icon: 'i-woot-captain',
+      name: 'AI Agent',
+      icon: 'i-woot-ai_agent',
       label: t('SIDEBAR.CAPTAIN'),
       children: [
         {
-          name: 'Assistants',
+          name: 'Topics',
           label: t('SIDEBAR.CAPTAIN_ASSISTANTS'),
-          to: accountScopedRoute('captain_assistants_index'),
+          to: accountScopedRoute('ai_agent_topics_index'),
         },
         {
           name: 'Documents',
           label: t('SIDEBAR.CAPTAIN_DOCUMENTS'),
-          to: accountScopedRoute('captain_documents_index'),
+          to: accountScopedRoute('ai_agent_documents_index'),
         },
         {
           name: 'Responses',
           label: t('SIDEBAR.CAPTAIN_RESPONSES'),
-          to: accountScopedRoute('captain_responses_index'),
+          to: accountScopedRoute('ai_agent_responses_index'),
         },
       ],
     },
@@ -509,7 +509,7 @@ const menuItems = computed(() => {
           <template #trigger="{ toggle }">
             <Button
               icon="i-lucide-pen-line"
-              color="slate"
+              color="purple"
               size="sm"
               class="!h-7 !bg-n-solid-3 dark:!bg-n-black/30 !outline-n-weak !text-n-slate-11"
               @click="toggle"

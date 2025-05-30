@@ -109,7 +109,7 @@ onMounted(() => {
       v-tooltip="tooltipText"
       sm
       ghost
-      slate
+      purple
       class="!gap-1 group-hover:bg-n-alpha-2"
       @click="openIssue"
     >

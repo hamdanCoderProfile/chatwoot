@@ -86,7 +86,7 @@ const actionLabel = key => {
       <span class="text-sm font-medium text-slate-600 dark:text-slate-100">
         {{ $t('BULK_ACTION.UPDATE.CHANGE_STATUS') }}
       </span>
-      <Button ghost xs slate icon="i-lucide-x" @click="onClose" />
+      <Button ghost xs purple icon="i-lucide-x" @click="onClose" />
     </div>
     <div class="px-2.5 pt-0 pb-2.5">
       <WootDropdownMenu class="m-0 list-none">
@@ -95,7 +95,7 @@ const actionLabel = key => {
             <Button
               ghost
               sm
-              slate
+              purple
               class="!w-full ltr:!justify-start rtl:!justify-end"
               :icon="action.icon"
               :label="actionLabel(action.key)"

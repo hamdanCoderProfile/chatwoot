@@ -141,7 +141,7 @@ useEmitter(CMD_RESOLVE_CONVERSATION, onCmdResolveConversation);
         v-if="isOpen"
         :label="t('CONVERSATION.HEADER.RESOLVE_ACTION')"
         size="sm"
-        color="slate"
+        color="purple"
         class="ltr:rounded-r-none rtl:rounded-l-none !outline-0"
         :is-loading="isLoading"
         @click="onCmdResolveConversation"
@@ -150,7 +150,7 @@ useEmitter(CMD_RESOLVE_CONVERSATION, onCmdResolveConversation);
         v-else-if="isResolved"
         :label="t('CONVERSATION.HEADER.REOPEN_ACTION')"
         size="sm"
-        color="slate"
+        color="purple"
         class="ltr:rounded-r-none rtl:rounded-l-none !outline-0"
         :is-loading="isLoading"
         @click="onCmdOpenConversation"
@@ -159,7 +159,7 @@ useEmitter(CMD_RESOLVE_CONVERSATION, onCmdResolveConversation);
         v-else-if="showOpenButton"
         :label="t('CONVERSATION.HEADER.OPEN_ACTION')"
         size="sm"
-        color="slate"
+        color="purple"
         :is-loading="isLoading"
         @click="onCmdOpenConversation"
       />
@@ -170,7 +170,7 @@ useEmitter(CMD_RESOLVE_CONVERSATION, onCmdResolveConversation);
         :disabled="isLoading"
         size="sm"
         class="ltr:rounded-l-none rtl:rounded-r-none !outline-0"
-        color="slate"
+        color="purple"
         trailing-icon
         @click="openDropdown"
       />
@@ -185,7 +185,7 @@ useEmitter(CMD_RESOLVE_CONVERSATION, onCmdResolveConversation);
           <Button
             :label="t('CONVERSATION.RESOLVE_DROPDOWN.SNOOZE_UNTIL')"
             ghost
-            slate
+            purple
             sm
             start
             icon="i-lucide-alarm-clock-minus"
@@ -197,7 +197,7 @@ useEmitter(CMD_RESOLVE_CONVERSATION, onCmdResolveConversation);
           <Button
             :label="t('CONVERSATION.RESOLVE_DROPDOWN.MARK_PENDING')"
             ghost
-            slate
+            purple
             sm
             start
             icon="i-lucide-circle-dot-dashed"

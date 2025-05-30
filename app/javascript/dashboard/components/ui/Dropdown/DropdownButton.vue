@@ -20,7 +20,7 @@ defineProps({
 <template>
   <Button
     ghost
-    slate
+    purple
     sm
     class="relative"
     :icon="icon"

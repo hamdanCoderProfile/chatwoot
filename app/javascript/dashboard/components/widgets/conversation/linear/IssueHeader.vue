@@ -43,7 +43,7 @@ const openIssue = () => {
       <Button
         ghost
         xs
-        slate
+        purple
         icon="i-lucide-unlink"
         class="!transition-none"
         :is-loading="isUnlinking"
@@ -52,7 +52,7 @@ const openIssue = () => {
       <Button
         ghost
         xs
-        slate
+        purple
         class="!transition-none"
         icon="i-lucide-arrow-up-right"
         @click="openIssue"

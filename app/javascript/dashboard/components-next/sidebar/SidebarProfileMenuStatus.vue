@@ -82,7 +82,7 @@ function updateAutoOffline(autoOffline) {
           <template #trigger="{ toggle }">
             <Button
               size="sm"
-              color="slate"
+              color="purple"
               variant="faded"
               class="min-w-[96px]"
               icon="i-lucide-chevron-down"

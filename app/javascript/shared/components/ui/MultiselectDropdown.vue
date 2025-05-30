@@ -59,7 +59,7 @@ const hasValue = computed(() => {
   <OnClickOutside @trigger="onCloseDropdown">
     <div class="relative w-full mb-2" @keyup.esc="onCloseDropdown">
       <Button
-        slate
+        purple
         outline
         trailing-icon
         :icon="
@@ -100,7 +100,7 @@ const hasValue = computed(() => {
           >
             {{ multiselectorTitle }}
           </h4>
-          <Button ghost slate xs icon="i-lucide-x" @click="onCloseDropdown" />
+          <Button ghost purple xs icon="i-lucide-x" @click="onCloseDropdown" />
         </div>
         <MultiselectDropdownItems
           v-if="showSearchDropdown"

@@ -121,7 +121,7 @@ onBeforeUnmount(() => {
           v-if="canRefresh"
           ghost
           sm
-          amber
+          purple
           icon="i-lucide-refresh-ccw"
           :title="$t('NETWORK.BUTTON.REFRESH')"
           class="!text-n-amber-12 dark:!text-n-amber-9"
@@ -131,7 +131,7 @@ onBeforeUnmount(() => {
         <Button
           ghost
           sm
-          amber
+          purple
           icon="i-lucide-x"
           class="!text-n-amber-12 dark:!text-n-amber-9"
           @click="closeNotification"

@@ -60,7 +60,7 @@ const emit = defineEmits(['delete']);
       <Button
         v-tooltip.top="$t('SLA.FORM.DELETE')"
         faded
-        ruby
+        purple
         xs
         icon="i-lucide-trash-2"
         :is-loading="isLoading"

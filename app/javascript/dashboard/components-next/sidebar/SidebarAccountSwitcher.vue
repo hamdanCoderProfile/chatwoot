@@ -115,7 +115,7 @@ const emitNewAccount = () => {
       </DropdownSection>
       <DropdownItem v-if="globalConfig.createNewAccountFromDashboard">
         <ButtonNext
-          color="slate"
+          color="purple"
           variant="faded"
           class="w-full"
           size="sm"

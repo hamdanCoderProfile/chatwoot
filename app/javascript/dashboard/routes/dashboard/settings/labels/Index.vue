@@ -142,7 +142,7 @@ onBeforeMount(() => {
                 <Button
                   v-tooltip.top="$t('LABEL_MGMT.FORM.EDIT')"
                   icon="i-lucide-pen"
-                  slate
+                  purple
                   xs
                   faded
                   :is-loading="loading[label.id]"
@@ -152,7 +152,7 @@ onBeforeMount(() => {
                   v-tooltip.top="$t('LABEL_MGMT.FORM.DELETE')"
                   icon="i-lucide-trash-2"
                   xs
-                  ruby
+                  purple
                   faded
                   :is-loading="loading[label.id]"
                   @click="openDeletePopup(label, index)"

@@ -251,7 +251,7 @@ onMounted(getTeams);
     <div class="flex items-center justify-end w-full gap-2 mt-8">
       <Button
         faded
-        slate
+        purple
         type="reset"
         :label="$t('INTEGRATION_SETTINGS.LINEAR.ADD_OR_LINK.CANCEL')"
         @click.prevent="onClose"

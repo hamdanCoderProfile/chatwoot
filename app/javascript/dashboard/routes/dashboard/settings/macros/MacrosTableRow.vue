@@ -56,7 +56,7 @@ const visibilityLabel = computed(() => {
         <Button
           v-tooltip.top="$t('MACROS.EDIT.TOOLTIP')"
           icon="i-lucide-pen"
-          slate
+          purple
           xs
           faded
         />
@@ -65,7 +65,7 @@ const visibilityLabel = computed(() => {
         v-tooltip.top="$t('MACROS.DELETE.TOOLTIP')"
         icon="i-lucide-trash-2"
         xs
-        ruby
+        purple
         faded
         @click="$emit('delete')"
       />

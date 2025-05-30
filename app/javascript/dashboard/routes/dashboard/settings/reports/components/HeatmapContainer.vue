@@ -87,7 +87,7 @@ onMounted(() => {
         >
           <Button
             sm
-            slate
+            purple
             faded
             :label="selectedDayFilter.label"
             class="rounded-md group-hover:bg-n-alpha-2"
@@ -102,7 +102,7 @@ onMounted(() => {
         </div>
         <Button
           sm
-          slate
+          purple
           faded
           :label="t('OVERVIEW_REPORTS.CONVERSATION_HEATMAP.DOWNLOAD_REPORT')"
           class="rounded-md group-hover:bg-n-alpha-2"

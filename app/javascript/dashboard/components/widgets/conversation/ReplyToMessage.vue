@@ -30,7 +30,7 @@ const emit = defineEmits(['dismiss']);
       v-tooltip="$t('CONVERSATION.REPLYBOX.DISMISS_REPLY')"
       ghost
       xs
-      slate
+      purple
       icon="i-lucide-x"
       @click.stop="emit('dismiss')"
     />

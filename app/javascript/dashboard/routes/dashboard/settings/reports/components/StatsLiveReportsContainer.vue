@@ -93,7 +93,7 @@ onMounted(() => {
           >
             <Button
               sm
-              slate
+              purple
               faded
               :label="selectedTeamLabel"
               class="capitalize rounded-md group-hover:bg-n-alpha-2"
