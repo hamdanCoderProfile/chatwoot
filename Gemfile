@@ -8,6 +8,8 @@ gem 'rails', '~> 7.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'active_model_serializers', '~> 0.10.0'
+
 ##-- rails application helper gems --##
 gem 'acts-as-taggable-on'
 gem 'attr_extras'

@@ -22,7 +22,10 @@ const state = {
   syncConversationsMessages: {},
   conversationFilters: {},
   copilotTopic: {},
+  selectedConversation: {}, // <-- Added this to store the full conversation
+  contentAttributes: {}, // <-- Added this to store the extracted attributes
 };
+
 
 // mutations
 export const mutations = {
@@ -54,6 +57,12 @@ export const mutations = {
     });
     _state.allConversations = newAllConversations;
   },
+  [types.UPDATE_CONVERSATION_CONTENT_ATTRIBUTES](_state, { conversationId, contentAttributes }) {
+    const [chat] = _state.allConversations.filter(c => c.id === conversationId);
+    if (chat) {
+      chat.content_attributes = contentAttributes;
+    }
+  },  
   [types.EMPTY_ALL_CONVERSATION](_state) {
     _state.allConversations = [];
     _state.selectedChatId = null;
@@ -226,6 +235,14 @@ export const mutations = {
       _state.allConversations.push(conversation);
     }
   },
+
+  UPDATE_CONVERSATION_CONTENT_ATTRIBUTES(_state, { conversationId, contentAttributes }) {
+    const [chat] = _state.allConversations.filter(c => c.id === conversationId);
+    if (chat) {
+      chat.content_attributes = contentAttributes;
+    }
+  },
+  
 
   [types.SET_LIST_LOADING_STATUS](_state) {
     _state.listLoadingStatus = true;

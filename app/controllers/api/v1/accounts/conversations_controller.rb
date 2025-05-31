@@ -34,7 +34,10 @@ class Api::V1::Accounts::ConversationsController < Api::V1::Accounts::BaseContro
                                 .per(ATTACHMENT_RESULTS_PER_PAGE)
   end
 
-  def show; end
+  def show
+    render json: @conversation, serializer: ConversationSerializer
+  end
+  
 
   def create
     ActiveRecord::Base.transaction do

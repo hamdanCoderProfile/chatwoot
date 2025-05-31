@@ -74,6 +74,11 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
+    active_model_serializers (0.10.15)
+      actionpack (>= 4.1)
+      activemodel (>= 4.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     active_record_query_trace (1.8)
     activejob (7.1.5.1)
       activesupport (= 7.1.5.1)
@@ -172,6 +177,8 @@ GEM
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
     byebug (11.1.3)
+    case_transform (0.2)
+      activesupport
     climate_control (1.2.0)
     coderay (1.1.3)
     commonmarker (0.23.10)
@@ -405,6 +412,7 @@ GEM
       hana (~> 1.3)
       regexp_parser (~> 2.0)
       uri_template (~> 0.7)
+    jsonapi-renderer (0.2.2)
     judoscale-rails (1.8.2)
       judoscale-ruby (= 1.8.2)
       railties
@@ -885,6 +893,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  active_model_serializers (~> 0.10.0)
   active_record_query_trace
   activerecord-import
   acts-as-taggable-on

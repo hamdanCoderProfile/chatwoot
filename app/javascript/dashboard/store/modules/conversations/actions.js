@@ -32,11 +32,20 @@ const actions = {
       const response = await ConversationApi.show(conversationId);
       commit(types.UPDATE_CONVERSATION, response.data);
       commit(`contacts/${types.SET_CONTACT_ITEM}`, response.data.meta.sender);
+      
+      // NEW: Commit contentAttributes separately with conversation ID
+      if (response.data.content_attributes) {
+        commit('SET_CONTENT_ATTRIBUTES', {
+          conversationId: response.data.id,
+          contentAttributes: response.data.content_attributes
+        });
+      }
     } catch (error) {
       // Ignore error
     }
   },
-
+  
+  
   fetchAllConversations: async ({ commit, state, dispatch }) => {
     commit(types.SET_LIST_LOADING_STATUS);
     try {
