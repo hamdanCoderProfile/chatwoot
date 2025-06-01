@@ -1,0 +1,57 @@
+**Documenting My Workflow:**
+
+**Step 1: Setting Up the Development Environment**
+
+* **Tools Used:** Visual Studio Code (VS Code), Git, Terminal, Postgres.
+* **Description:** I used VS Code as my primary IDE, which provided an efficient interface for editing and navigating the large codebase. Git was indispensable for version control, allowing me to manage incremental changes and maintain separate branches for features. I managed the PostgreSQL database via Terminal and `psql` commands to inspect, seed, and troubleshoot data issues.
+
+---
+
+**Step 2: Backend Investigation & Implementation**
+
+* **Tools Used:** Ruby on Rails, Rails Console (`rails c`), RSpec (as needed).
+* **Description:** I leveraged the Rails Console to inspect models (like `Conversation`, `User`, and `Inbox`) and tested queries like `.find()` and `.where()`. This helped me diagnose issues like missing `account_id`, absent `content_attributes`, and assign appropriate data for frontend rendering. Additionally, I explored Rails routes (`bin/rails routes`) to understand API endpoints relevant to conversations.
+
+---
+
+**Step 3: Frontend Development**
+
+* **Tools Used:** Vue.js (v3), Vuex (state management), Vue Devtools, Chrome DevTools.
+* **Description:** I used Vue.js to enhance the Conversation Sidebar by integrating dynamic Content Attributes. Vue Devtools and Chrome DevTools were critical for real-time debugging — inspecting component trees, Vuex store states, and network requests. I utilized these to verify API responses and ensure data flow from the backend to the UI.
+
+---
+
+**Step 4: API Integration**
+
+* **Tools Used:** Axios, Vuex Actions/Mutations.
+* **Description:** Axios facilitated asynchronous API calls to fetch conversation data. I structured Vuex actions to dispatch API calls, commit mutations, and update the store — ensuring consistent state management. I also updated Vuex mutations to incorporate `content_attributes` into the relevant conversation object.
+
+---
+
+**Step 5: Testing and Validation**
+
+* **Tools Used:** Browser (Chrome), Postman/cURL (for API testing), Rails Logs.
+* **Description:** I tested the entire workflow by running the Rails server locally and inspecting API calls through Chrome Network Panel. When frontend issues arose, I used Postman/cURL to directly hit endpoints and confirm correct data serialization. Rails server logs were invaluable for debugging request/response cycles and identifying permission errors.
+
+---
+
+**Step 6: Troubleshooting & Iteration**
+
+* **Tools Used:** Rails Console, Vue Devtools, Console Logs.
+* **Description:** During issues like missing data or unexpected errors, I iteratively refined the Vuex actions and the Rails serializers. I used the Rails Console to simulate data updates, ensuring my fixes aligned with the database state.
+
+---
+
+**Step 7: Version Control & Documentation**
+
+* **Tools Used:** Git, Commit Messages.
+* **Description:** Throughout the process, I used meaningful Git commit messages to track progress and implemented feature-based branching. This allowed easy rollbacks and code reviews, while ensuring each change was clearly documented and logically grouped.
+
+---
+
+**Summary:**
+
+* **Primary Tools:** VS Code, Git, Rails Console, Postgres, Vue.js, Vue Devtools, Chrome DevTools, Axios, Postman/cURL.
+* **How They Helped:** These tools formed a cohesive ecosystem that supported both **backend** (model, serializer, API) and **frontend** (Vuex, Vue components) development. They provided **debugging**, **state management**, **API testing**, and **data inspection** capabilities — enabling a full-stack implementation and thorough troubleshooting.
+
+---
