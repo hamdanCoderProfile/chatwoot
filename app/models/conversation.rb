@@ -8,6 +8,7 @@
 #  assignee_last_seen_at  :datetime
 #  cached_label_list      :text
 #  contact_last_seen_at   :datetime
+#  content_attributes     :jsonb
 #  custom_attributes      :jsonb
 #  first_reply_created_at :datetime
 #  identifier             :string
