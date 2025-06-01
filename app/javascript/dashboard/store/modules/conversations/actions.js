@@ -32,16 +32,16 @@ const actions = {
       const response = await ConversationApi.show(conversationId);
       commit(types.UPDATE_CONVERSATION, response.data);
       commit(`contacts/${types.SET_CONTACT_ITEM}`, response.data.meta.sender);
-      
-      // NEW: Commit contentAttributes separately with conversation ID
+  
+      // Use correct mutation type
       if (response.data.content_attributes) {
-        commit('SET_CONTENT_ATTRIBUTES', {
+        commit(types.UPDATE_CONVERSATION_CONTENT_ATTRIBUTES, {
           conversationId: response.data.id,
           contentAttributes: response.data.content_attributes
         });
       }
     } catch (error) {
-      // Ignore error
+      console.log("failed to get conversation!")
     }
   },
   

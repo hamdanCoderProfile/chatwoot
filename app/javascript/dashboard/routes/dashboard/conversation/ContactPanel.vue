@@ -266,38 +266,35 @@ onMounted(() => {
         </template>
       </Draggable>
       <div>
-      <AccordionItem
-  title="Content Attributes"
-  icon="tag"
-  :is-open="isContentAttributesOpen"
-  @toggle="value => toggleSidebarUIState('is_content_attributes_open', value)"
->
-  <div v-if="currentChat?.content_attributes && Object.keys(currentChat.content_attributes).length">
-    <div v-if="currentChat.content_attributes.summary" class="mb-1">
-      <strong>Summary:</strong> {{ currentChat.content_attributes.summary }}
-    </div>
-    <div v-if="currentChat.content_attributes.priority" class="mb-1">
-      <strong>Priority:</strong> {{ currentChat.content_attributes.priority }}
-    </div>
-    <div
-      v-if="currentChat.content_attributes.tags && currentChat.content_attributes.tags.length"
-      class="mb-1"
-    >
-      <strong>Tags:</strong>
-      <span
-        v-for="tag in currentChat.content_attributes.tags"
-        :key="tag"
-        class="inline-block bg-n-surface border border-n-weak rounded px-2 py-1 text-xs mr-1 mb-1"
+      <AccordionItem title="Content Attributes" icon="tag"
+      :is-open="isContentAttributesOpen"
+      @toggle="value => toggleSidebarUIState('is_content_attributes_open', value)"
       >
-        {{ tag }}
-      </span>
-    </div>
+        <div v-if="currentChat.content_attributes">
+          <div v-if="currentChat.content_attributes.summary" class="mb-1">
+            <strong>Summary:</strong> {{ currentChat.content_attributes.summary }}
+          </div>
+          <div v-if="currentChat.content_attributes.priority" class="mb-1">
+            <strong>Priority:</strong> {{ currentChat.content_attributes.priority }}
+          </div>
+          <div
+            v-if="currentChat.content_attributes.tags && currentChat.content_attributes.tags.length"
+            class="mb-1"
+          >
+            <strong>Tags:</strong>
+            <span
+              v-for="tag in currentChat.content_attributes.tags"
+              :key="tag"
+              class="inline-block bg-n-surface border border-n-weak rounded px-2 py-1 text-xs mr-1 mb-1"
+            >
+              {{ tag }}
+            </span>
+          </div>
+        </div>
+        <div v-else>
+    <span class="text-n-muted">No content attributes available.</span>
   </div>
-  <div v-else>
-    <p class="text-sm text-gray-500">No content attributes available.</p>
-  </div>
-</AccordionItem>
-
+      </AccordionItem>
       </div>
     </div>
   </div>

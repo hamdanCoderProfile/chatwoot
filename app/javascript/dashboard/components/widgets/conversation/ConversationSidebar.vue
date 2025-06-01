@@ -6,6 +6,16 @@ import TabBar from 'dashboard/components-next/tabbar/TabBar.vue';
 import { useI18n } from 'vue-i18n';
 import { useMapGetter } from 'dashboard/composables/store';
 import { FEATURE_FLAGS } from '../../../featureFlags';
+import { onMounted } from 'vue';
+import { useStore } from 'dashboard/composables/store';
+import { watch } from 'vue';
+const store = useStore();
+
+onMounted(() => {
+  if (props.currentChat?.id) {
+    store.dispatch('conversations/getConversation', props.currentChat.id);
+  }
+});
 
 const props = defineProps({
   currentChat: {
@@ -49,6 +59,10 @@ const isFeatureEnabledonAccount = useMapGetter(
 const showCopilotTab = computed(() =>
   isFeatureEnabledonAccount.value(currentAccountId.value, FEATURE_FLAGS.CAPTAIN)
 );
+
+
+
+console.log('CurrentChat:', props.currentChat);
 </script>
 
 <template>
